@@ -1,8 +1,8 @@
 package com.company.company.entity;
 
-public class product {
+public class produit {
 
-	public product() {
+	public produit() {
 		// TODO Auto-generated constructor stub
 	}
 
