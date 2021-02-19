@@ -1,9 +1,9 @@
-package com.company.company.DAO;
+package com.example.company.DAO;
 
 import java.util.List;
 
-import com.company.company.entity.dossier;
-import com.company.company.entity.frais;
+import com.example.company.entity.dossier;
+import com.example.company.entity.frais;
 
 public interface fraisDAO {
 	

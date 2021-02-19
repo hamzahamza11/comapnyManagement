@@ -1,10 +1,11 @@
-package com.company.company.DAO;
+package com.example.company.DAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.company.company.entity.frais;
+
+import com.example.company.entity.frais;
 
 
 public class fraisDAOImpl implements fraisDAO {

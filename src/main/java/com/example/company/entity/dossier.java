@@ -1,4 +1,4 @@
-package com.company.company.entity;
+package com.example.company.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +15,9 @@ public class dossier {
 		// TODO Auto-generated constructor stub
 	}
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private String id;
 	
 	@Column(name="titre")
 	private String titre;
@@ -44,11 +44,11 @@ public class dossier {
 	private String fraisId;
 	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

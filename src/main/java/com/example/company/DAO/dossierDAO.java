@@ -1,10 +1,13 @@
-package com.company.company.DAO;
+package com.example.company.DAO;
 
 import java.util.List;
 
-import com.company.company.entity.dossier;
+import com.example.company.entity.dossier;
 
-public interface produitDAO {
+
+
+public interface dossierDAO {
+	
 	public List<dossier> getDossier();
 
 	public void saveDossier(dossier theCustomer);
