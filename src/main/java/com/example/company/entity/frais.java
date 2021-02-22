@@ -1,11 +1,21 @@
 package com.example.company.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.OneToOne;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+
+
+
+
+
+
 
 @Entity
 @Table(name="frais")
@@ -39,6 +49,12 @@ public class frais {
 	public int getId() {
 		return id;
 	}
+	
+	
+	@OneToOne(mappedBy="frais", 
+			cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+						CascadeType.REFRESH})
+	private dossier dossier;
 
 	public void setId(int id) {
 		this.id = id;

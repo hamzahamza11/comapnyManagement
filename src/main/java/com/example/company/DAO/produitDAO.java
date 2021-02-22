@@ -2,15 +2,17 @@ package com.example.company.DAO;
 
 import java.util.List;
 
-import com.example.company.entity.dossier;
+import com.example.company.entity.produit;
+
+
 
 public interface produitDAO {
-	public List<dossier> getDossier();
+	public List<produit> getProduit();
 
-	public void saveDossier(dossier theCustomer);
+	public void saveDossier(produit theProduit);
 
-	public dossier getDossier(int theId);
+	public produit getProduit(int theId);
 
-	public void deleteDossier(int theId);
+	public void deleteProduit(int theId);
 
 }

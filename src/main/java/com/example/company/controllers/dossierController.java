@@ -1,9 +1,14 @@
 package com.example.company.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.company.entity.dossier;
@@ -11,7 +16,7 @@ import com.example.company.service.dossierService;
 
 
 @RestController
-@RequestMapping("/api")
+
 public class dossierController {
 
 	
@@ -20,19 +25,33 @@ public class dossierController {
 	
 	@PostMapping("/dossier")
 	public dossier  addDossier(@RequestBody dossier theDossier) {
-		System.out.println("hey");
-	
-  System.out.println(theDossier);
 		
-		// also just in case the pass an id in JSON ... set id to 0
-		// this is force a save of new item ... instead of update
-	
-	theDossier.setId("hhhhhhhhh");
-	
-		dossierService.saveDossier(theDossier);
-		
-		return theDossier;
+	return	dossierService.saveDossier(theDossier);
+
 	}
+	
+	@GetMapping("/dossiers")
+	public List<dossier>  getDossiers() {
+		
+	return	dossierService.getDossier();
+
+	}
+	
+	@PutMapping("/dossier/{id}")
+	public dossier  putDossier(@PathVariable int id,@RequestBody dossier theDossier) {
+		
+	return	dossierService.putDossier(id,theDossier);
+
+	}
+	
+	@DeleteMapping("/dossier/{id}")
+	public void deleteDossier(@PathVariable int id) {
+		
+		dossierService.deleteDossier(id);
+
+	}
+	
+	
 	
 	
 

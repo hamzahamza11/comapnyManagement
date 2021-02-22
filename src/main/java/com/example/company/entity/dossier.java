@@ -1,11 +1,24 @@
 package com.example.company.entity;
 
-import javax.persistence.Column;
+ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+
+
+import javax.persistence.CascadeType;
+
+
+
+
+
+
+
 
 @Entity
 @Table(name="dossier")
@@ -15,9 +28,9 @@ public class dossier {
 		// TODO Auto-generated constructor stub
 	}
 	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private String id;
+	private int id;
 	
 	@Column(name="titre")
 	private String titre;
@@ -40,15 +53,25 @@ public class dossier {
 	@Column(name="intercom")
 	private String intercom;
 	
-	@Column(name="fraisId")
-	private String fraisId;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="id")
+	private frais frais;
 	
 	
-	public String getId() {
+    
+ 
+    
+    
+	
+	
+
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -108,13 +131,15 @@ public class dossier {
 		this.intercom = intercom;
 	}
 
-	public String getFraisId() {
-		return fraisId;
+	public frais getFrais() {
+		return frais;
 	}
 
-	public void setFraisId(String fraisId) {
-		this.fraisId = fraisId;
+	public void setFrais(frais frais) {
+		this.frais = frais;
 	}
+
+
 	
 
 }

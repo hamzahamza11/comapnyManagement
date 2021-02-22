@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customer")
+@Table(name="produit")
 public class produit {
 	
 	@Id
@@ -29,8 +29,10 @@ public class produit {
 	@Column(name="prudh")
 	private float prudh;
 	
+	
+	
 	@Column(name="dossierId")
-	private String dossierId;
+	private int dossierId;
 
 	public int getId() {
 		return id;
@@ -72,11 +74,11 @@ public class produit {
 		this.prudh = prudh;
 	}
 
-	public String getDossierId() {
+	public int getDossierId() {
 		return dossierId;
 	}
 
-	public void setDossierId(String dossierId) {
+	public void setDossierId(int dossierId) {
 		this.dossierId = dossierId;
 	}
 	
