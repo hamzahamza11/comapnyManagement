@@ -1,9 +1,11 @@
 package com.example.company.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.company.DAO.produitDAO;
 import com.example.company.DAO.produitRepository;
+import com.example.company.entity.frais;
 import com.example.company.entity.produit;
 
 
@@ -23,21 +25,32 @@ public class produitService implements produitDAO {
 	}
 
 	@Override
-	public void saveDossier(produit theProduit) {
+	public produit saveProduit(produit theProduit) {
 		// TODO Auto-generated method stub
+		return repository.save(theProduit);
 
 	}
 
 	@Override
-	public produit getProduit(int theId) {
+	public Optional<produit> getProduit(int theId) {
 		// TODO Auto-generated method stub
-		return null;
+		return repository.findById(theId);
 	}
 
 	@Override
 	public void deleteProduit(int theId) {
 		// TODO Auto-generated method stub
+		repository.deleteById(theId);
 
+	}
+	
+	
+	@Override
+	public produit putProduit(int id,produit theProduit) {
+		// TODO Auto-generated method stub
+		produit produitToUpdate = repository.getOne(id);
+		produitToUpdate = theProduit;
+		return repository.save(produitToUpdate);
 	}
 
 }
